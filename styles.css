@@ -1,0 +1,311 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header Style */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease-out; /* Smooth transition */
+}
+
+/* Shrink the header, logo, and nav when scrolling */
+.header.shrink {
+    padding: 0.5em 1.5em;
+}
+
+.header.shrink .logo {
+    max-width: 300px; /* Shrink logo */
+    transition: max-width 0.3s ease-out;
+}
+
+.header.shrink nav {
+    transition: transform 0.3s ease-out;
+    transform: none;
+}
+
+/* Hamburger Button for Mobile */
+.hamburger {
+    display: none; /* Hide by default */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 4px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger on mobile */
+    }
+
+    nav ul {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 1em;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    nav ul li a {
+        padding: 1em;
+        font-size: 1.2em;
+    }
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: font-size 0.3s ease-out, gap 0.3s ease-out;
+    white-space: nowrap;
+    margin-left: auto
+}
+
+nav.shrink ul {
+    font-size: 1em; /* Shrink font size when scrolling */
+    gap: 0.5em;
+}
+
+/* Logo Style */
+.logo {
+    max-width: 800px;
+    width: 100%;
+    height: auto;
+    transition: max-width 0.3s ease-out;
+}
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: font-size 0.3s ease-out, gap 0.3s ease-out;
+    white-space: nowrap;
+}
+
+.nav-item {
+    position: relative;
+}
+
+/* Navigation Link Style */
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: black; /* Default text color */
+    padding: 0.3em 0.8em;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect - Change text color and add background */
+nav ul li a:hover {
+    background-color: rgba(148, 0, 0, 1); /* Slight red background */
+    color: rgb(255, 255, 255); /* Change text color to white */
+    border-radius: 15px;
+    transition: all 0.3s ease-out;
+}
+
+/* Info Box */
+.info-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.nav-item:hover .info-box {
+    display: block;
+}
+
+.info-box ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 1em;
+    display: block;
+}
+
+.info-box ul li {
+    padding: 0.2em 0;
+    display: block;
+}
+
+.info-box ul li a {
+    text-decoration: none;
+    color: black;
+    display: block;   /* Make links behave as block elements */
+    padding: 0.5em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.info-box ul li a:hover {
+    background-color: rgba(255, 0, 0, 0.3); /* Optional: background color on hover */
+    color: white;
+}
+
+.nav-item {
+    position: relative;
+}
+
+
+/* Keep your existing styles intact */
+
+/* For mobile view */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger button on mobile */
+        cursor: pointer;
+        flex-direction: column;
+        gap: 0.3em;
+    }
+
+    .hamburger .bar {
+        width: 30px;
+        height: 4px;
+        background-color: black;
+        border-radius: 5px;
+    }
+
+    .nav-links {
+        display: none; /* Hide nav links by default */
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 1em;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    nav ul li a {
+        padding: 1em;
+        font-size: 1.2em;
+    }
+
+    /* Ensure the overlay appears */
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Dark background */
+        display: none; /* Hidden by default */
+        z-index: 9; /* Placed above other elements */
+    }
+
+    #overlay.active {
+        display: block; /* Show overlay when active */
+    }
+}
+
+
+
+main {
+    padding: 2em;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+}
+
+#home {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.hero-video {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.7); /* White background with opacity for the box */
+    padding: 2em;
+    color: #333; /* Dark text color */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(163, 24, 24, 0.3); /* Shadow for depth */
+}
+
+.hero-content h2 {
+    font-size: 1.5em; /* Smaller size for "Welcome to" */
+    font-weight: 500; /* Not bold */
+    font-family: 'Montserrat';
+    letter-spacing: -2px; /* Optional: adds some spacing between letters */
+    margin: 0;
+}
+
+.hero-content h1 {
+    font-size: 3em; /* Larger size for the church name */
+    font-weight: bold;
+    margin: 0.5em 0;
+    letter-spacing: -5px; /* Optional: adds some spacing between letters */
+    font-family: 'Montserrat', bold;
+}
+
+.hero-content .tagline {
+    font-size: 1.2em; /* Slightly smaller than the main heading */
+    font-family: 'Arial'; /* Handwritten font style (ensure this is available or use another cursive font) */
+    font-weight: normal;
+    letter-spacing: -1px; /* Optional: adds some spacing between letters */
+    color: #555; /* Light gray for the tagline */
+    margin-top: 1em;
+}
