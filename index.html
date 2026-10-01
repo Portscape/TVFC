@@ -1,94 +1,292 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>True Vine Family Church International Inc.</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>True Vine Family Church International Inc.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <a href="#home" class="logo-container">
-            <img src="logo.png" alt="True Vine Family Church Logo" class="logo">
-        </a>
-    
-        <!-- Hamburger Button -->
-        <div class="hamburger-btn" id="hamburger-btn">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+
+<header class="header" id="siteHeader">
+  <a href="#home" class="logo-container">
+    <img src="logo.png" alt="True Vine Family Church International Inc. logo" class="logo">
+  </a>
+
+  <div class="hamburger-btn" id="hamburger-btn" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <nav id="nav-menu">
+    <ul class="nav-links">
+      <li class="nav-item">
+        <a href="#about">ABOUT</a>
+        <div class="info-box">
+          <ul>
+            <li><a href="#history">History</a></li>
+            <li><a href="#tvfcii">The TVFCII</a></li>
+            <li><a href="#pastors">Churches and Pastors</a></li>
+            <li><a href="#statement-of-faith">Statement of Faith</a></li>
+            <li><a href="#sec-registration">SEC Registration</a></li>
+          </ul>
         </div>
-    
-        <!-- Navigation Menu -->
-        <nav id="nav-menu">
-            <ul class="nav-links">
-                <li class="nav-item">
-                    <a href="#about">ABOUT</a>
-                    <div class="info-box">
-                        <ul>
-                            <li>History</li>
-                            <li>The TVFCII</li>
-                            <li>Churches and Pastors</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="#events">EVENTS</a>
-                    <div class="info-box">
-                        <ul>
-                            <li>Upcoming Events</li>
-                            <li>Past Events</li>
-                            <li>Renaissance Worship</li>
-                            <li>Media</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="#live">LIVE</a>
-                    <div class="info-box">
-                        <ul>
-                            <li>Pilipinas May Pag-asa Pa</li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact">CONTACT US</a>
-                    <div class="info-box">
-                        <ul>
-                            <li>Contact Details</li>
-                            <li>Location</li>
-                            <li>Get in Touch</li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    
-    <!-- Dark Overlay for Home Page -->
-    <div id="overlay" class="overlay"></div>
-    
+      </li>
+      <li class="nav-item">
+        <a href="#events">EVENTS</a>
+        <div class="info-box">
+          <ul>
+            <li><a href="#upcoming">Upcoming Events</a></li>
+            <li><a href="#past">Past Events</a></li>
+            <li><a href="#renaissance">Renaissance Worship</a></li>
+            <li><a href="#media">Media</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#live">LIVE</a>
+        <div class="info-box">
+          <ul>
+            <li><a href="#live">Pilipinas May Pag-asa Pa</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="#contact">CONTACT US</a>
+        <div class="info-box">
+          <ul>
+            <li><a href="#contact-details">Contact Details</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#get-in-touch">Get in Touch</a></li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div id="overlay"></div>
 
 <main>
-    <section id="home">
-        <div class="hero">
-            <video class="hero-video" autoplay muted loop>
-                <source src="Video1Intro.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <div class="hero-content">
-                <h2>Welcome to</h2>
-                <h1>TRUE VINE FAMILY CHURCH INTERNATIONAL INC.</h1>
-                <p class="tagline">Rooted in <strong>Christ</strong>, Guided by <strong>Faith</strong>, Transformed by the <strong>Holy Spirit</strong></p>
-            </div>
+
+  <section id="home">
+    <div class="hero">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="Video1Intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-content">
+        <h2>Welcome to</h2>
+        <h1>TRUE VINE FAMILY CHURCH INTERNATIONAL INC.</h1>
+        <p class="tagline">Rooted in <strong>Christ</strong>, Guided by <strong>Faith</strong>, Transformed by the <strong>Holy Spirit</strong></p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-maroon">Plan Your Visit</a>
+          <a href="#live" class="btn btn-ghost">Watch Live</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">About Us</span>
+        <h2>Who We Are</h2>
+        <p>True Vine Family Church International Inc. is a family of believers rooted in Scripture and committed to raising churches and leaders across the Philippines and beyond.</p>
+      </div>
+
+      <div class="about-intro">
+        <img src="church-hero.jpg" alt="Pastor preaching to the congregation at True Vine Family Church">
+        <div>
+          <h3 style="margin-bottom:10px;">A Church Built on the Word</h3>
+          <p>Every service, ministry, and gathering here is shaped by one conviction — that Scripture is our foundation and Christ is our source. What you see in this photo is what you'll find every time you walk through our doors: a congregation gathered to hear, worship, and respond to God's Word together.</p>
+        </div>
+      </div>
+
+      <div class="sub-block" id="history">
+        <h3>History</h3>
+        <p>Add the story of how True Vine Family Church International Inc. began — the founding pastor, the first gathering, and the milestones that shaped the ministry into what it is today.</p>
+      </div>
+
+      <div class="sub-block" id="tvfcii">
+        <h3>The TVFCII</h3>
+        <p>Add a description of True Vine Family Church International Inc. as an organization — its mission, vision, and the doctrinal convictions that guide every church under its name.</p>
+      </div>
+
+      <div class="sub-block" id="pastors">
+        <h3>Churches and Pastors</h3>
+        <p>Every True Vine branch and the pastor leading it, listed here as the ministry grows.</p>
+        <div class="pastor-grid">
+          <div class="pastor-card">
+            <h4>Main Branch</h4>
+            <p>Add the pastor's name and branch address.</p>
+          </div>
+          <div class="pastor-card">
+            <h4>Branch 2</h4>
+            <p>Add the pastor's name and branch address.</p>
+          </div>
+        </div>
+        <div class="empty-note">List every True Vine church and its pastor here as the ministry expands — this grid grows with your network.</div>
+      </div>
+
+      <div class="sub-block" id="statement-of-faith">
+        <h3>Statement of Faith</h3>
+        <p>Add the core beliefs True Vine Family Church International Inc. holds to — Scripture, the Trinity, salvation, and whatever else forms your doctrinal foundation. This is usually presented as a short, clearly numbered list of convictions.</p>
+        <div class="empty-note">Once you share your statement of faith, it can be formatted here as a clean numbered list for visitors to read.</div>
+      </div>
+
+      <div class="sub-block" id="sec-registration">
+        <h3>SEC Registration</h3>
+        <p>Add your SEC registration details here — registration number, date registered, and registered name — so visitors and partner organizations can verify True Vine Family Church International Inc. as a legitimate registered entity.</p>
+        <div class="empty-note">If you have a registration certificate to show, I can add it here as a downloadable PDF or an image.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="events">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">What's Happening</span>
+        <h2>Events</h2>
+        <p>Join us for worship, celebration, and fellowship throughout the year.</p>
+      </div>
+
+      <div class="sub-block" id="upcoming">
+        <h3>Upcoming Events</h3>
+        <div class="event-feature">
+          <div class="event-date">
+            <span class="day">TBA</span>
+            <span class="month">Date coming soon</span>
+          </div>
+          <div class="event-body">
+            <span class="event-tag">Featured Event</span>
+            <h3>Jubilee Night</h3>
+            <p>A night of worship, celebration and thanksgiving as a church family — set aside to give God praise and to declare a season of favor and restoration over our congregation and our community.</p>
+            <div class="event-meta">
+              <span><strong>Date &amp; Time:</strong> To be announced</span>
+              <span><strong>Location:</strong> To be announced</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-block" id="past">
+        <h3>Past Events</h3>
+        <p>A record of past gatherings, revivals, and celebrations will be archived here as they happen.</p>
+      </div>
+
+      <div class="sub-block" id="renaissance">
+        <h3>Renaissance Worship</h3>
+        <p>Add details about Renaissance Worship — the heart behind it, when it meets, and who leads it.</p>
+      </div>
+
+      <div class="sub-block" id="media">
+        <h3>Media</h3>
+        <p>Sermon recordings, worship sets, and event highlights will be collected here as your media library grows.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="live">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Tune In</span>
+        <h2>Live</h2>
+        <p>Can't make it in person? Join us online.</p>
+      </div>
+      <div class="live-card">
+        <span class="live-badge"><span class="live-dot"></span>Live Broadcast</span>
+        <h3>Pilipinas May Pag-asa Pa</h3>
+        <p>Once your stream link is ready — YouTube, Facebook Live, or another platform — it can go right here as a direct "Watch Now" button to your channel.</p>
+        <a href="#contact" class="btn btn-maroon">Add Your Stream Link</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">We'd Love to Meet You</span>
+        <h2>Contact Us</h2>
+        <p>Reach out with questions, prayer requests, or to plan your first visit.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <div class="sub-block" id="contact-details" style="margin-bottom:34px;">
+            <h3>Contact Details</h3>
+            <ul class="contact-list">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5a2 2 0 0 1 2-2h2.28a1 1 0 0 1 .97.76l1.02 4.1a1 1 0 0 1-.55 1.13l-1.7.85a12 12 0 0 0 6.14 6.14l.85-1.7a1 1 0 0 1 1.13-.55l4.1 1.02a1 1 0 0 1 .76.97V19a2 2 0 0 1-2 2h-1C8.61 21 3 15.4 3 8.5V5Z"/></svg>
+                <div><h5>Phone</h5><p>Add your church office number.</p></div>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18v12H3V6Z"/><path d="m3 6 9 7 9-7"/></svg>
+                <div><h5>Email</h5><p>Add your church email address.</p></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="sub-block" id="location">
+            <h3>Location</h3>
+            <div class="branch-cards">
+              <div class="branch-place">
+                <h4>Main Branch</h4>
+                <p>Add the full address here.</p>
+              </div>
+              <div class="branch-place">
+                <h4>Branch 2</h4>
+                <p>Add this location's address.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sub-block" id="get-in-touch" style="margin:0;">
+          <h3>Get in Touch</h3>
+          <form class="contact-form" onsubmit="return false;">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input id="name" type="text" placeholder="Your name">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@email.com">
+              </div>
+            </div>
+            <div class="field">
+              <label for="subject">Reason for reaching out</label>
+              <select id="subject">
+                <option>Plan a visit</option>
+                <option>Prayer request</option>
+                <option>Ministry inquiry</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" placeholder="Write your message here"></textarea>
+            </div>
+            <p class="form-note">This form is a visual template — connect it to your email or form service to start receiving messages.</p>
+            <button type="submit" class="btn btn-maroon" style="justify-self:start;border:none;cursor:pointer;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
-    <p>&copy; 2024 True Vine Family Church International Inc. All rights reserved.</p>
+  <p>&copy; <span id="year"></span> True Vine Family Church International Inc. All rights reserved.</p>
 </footer>
+
+<script defer src="script.js"></script>
 
 </body>
 </html>

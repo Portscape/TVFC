@@ -1,35 +1,35 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("Website for True Vine Family Church is live!");
+document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Variables to track header and menu states
-    let isShrunk = false;  // Track if header is already shrunk
-    const header = document.querySelector('.header');
-    const logo = document.querySelector('.logo');
-    const nav = document.querySelector('nav');
-    
-    // Shrink header, logo, and move nav on scroll
-    window.addEventListener('scroll', () => {
-        const currentScrollPosition = window.scrollY;
+  // Shrink header on scroll
+  let isShrunk = false;
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    if (y > 10 && !isShrunk) { isShrunk = true; header.classList.add('shrink'); }
+    else if (y <= 10 && isShrunk) { isShrunk = false; header.classList.remove('shrink'); }
+  });
 
-        if (currentScrollPosition > 0 && !isShrunk) {
-            isShrunk = true;
-            header.classList.add('shrink');
-            logo.classList.add('shrink');
-            nav.classList.add('shrink');
-        } else if (currentScrollPosition === 0 && isShrunk) {
-            isShrunk = false;
-            header.classList.remove('shrink');
-            logo.classList.remove('shrink');
-            nav.classList.remove('shrink');
-        }
-    });
+  // Hamburger toggle
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const navMenu = document.getElementById('nav-menu');
+  const overlay = document.getElementById('overlay');
 
-    // Hamburger Button to toggle navigation menu visibility
-    const hamburgerBtn = document.querySelector('.hamburger-btn');s
-    const navLinks = document.querySelector('.nav-links');
-    hamburgerBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-});
-
-
+  function toggleMenu() {
+    const open = navMenu.classList.toggle('active');
+    overlay.classList.toggle('active', open);
+    hamburgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  hamburgerBtn.addEventListener('click', toggleMenu);
+  hamburgerBtn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleMenu(); }
+  });
+  overlay.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  });
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburgerBtn.setAttribute('aria-expanded', 'false');
+  }));
