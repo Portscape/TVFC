@@ -7,8 +7,6 @@
     --bg:#f9f9f9;
     --white:#ffffff;
     --line:rgba(0,0,0,0.1);
-    padding-top:env(safe-area-inset-top,0px);
-    padding-bottom:env(safe-area-inset-bottom,0px);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;scroll-padding-top:110px;}
@@ -27,11 +25,19 @@
   .header{
     display:flex;justify-content:space-between;align-items:center;
     padding:1em 2em;padding-top:calc(1em + env(safe-area-inset-top,0px));
-    background-color:rgba(255,255,255,0.85);
     box-shadow:0 4px 6px rgba(0,0,0,0.08);
     position:sticky;top:0;z-index:1000;
-    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
     transition:all 0.3s ease-out;
+  }
+  /* backdrop-filter lives on this pseudo-element rather than .header itself —
+     on some browsers a filter/backdrop-filter on an element turns it into the
+     containing block for its position:fixed descendants (our mobile nav panel),
+     which made the nav panel size itself to the header's height instead of the
+     full screen. Isolating the blur here keeps the look without that side effect. */
+  .header::before{
+    content:"";position:absolute;inset:0;z-index:-1;
+    background-color:rgba(255,255,255,0.85);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   }
   .header.shrink{padding:0.6em 1.5em;}
   .logo-container{display:block;line-height:0;}
